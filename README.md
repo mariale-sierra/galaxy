@@ -1,10 +1,8 @@
-# Laboratorio: planetas y estrellas con shaders — estilo Super Mario Galaxy
+# Laboratorio: planetas y estrellas con shaders — Super Mario Galaxy
 
-Tres cuerpos celestes generados **solo con fragment shaders en CPU** sobre la **misma esfera** (`sphere.obj`), sin texturas ni imágenes.
-Inspiración: el planeta de Rosalina (pasto, roca, cuevas, flores, halo celeste), los planetas helados azules y el mapa de galaxias del Mundo 2.
+Tres cuerpos celestes generados **solo con fragment shaders en CPU** sobre la **misma esfera** sin texturas ni imágenes.
+Inspiración: el planeta de Rosalina (pasto, roca, cuevas, flores, halo celeste), los planetas helados azules y el mapa de galaxias del Mundo 2 de Super Mario Galaxy.
 
-> Nota: el renderer (`renderer.py`) es un rasterizador en CPU con z-buffer y shaders diferidos (el shader corre una vez por pixel visible).
-> Si tu clase usa otro renderer, las funciones `*_shader(F)` se portan directo: solo usan `F.n` (dirección sobre la esfera), `F.L` (luz), `F.V` (vista), `F.diff` (intensidad) y `F.t` (tiempo).
 
 ## Instalación y ejecución
 ```bash
@@ -14,7 +12,6 @@ python main.py --shader rocky --time 3 --out screenshots/rocky.png --ssaa 2   # 
 python main.py --shader gas --gif screenshots/gas.gif --frames 24 --size 320x240   # GIF
 ```
 Teclas: **1** estrella · **2** planeta rocoso · **3** gigante gaseoso · **4** sistema (sol + 2 planetas orbitando) · flechas = cámara · `+`/`-` = zoom · espacio = pausa · **S** = captura.
-Alternativa por código: `build("star" | "rocky" | "gas" | "system", t)` en `main.py`.
 
 ## Los cuerpos
 ### 1. Luma Solar (estrella) — `shaders/star.py::star_shader`
